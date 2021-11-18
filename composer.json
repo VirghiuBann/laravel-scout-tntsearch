@@ -1,8 +1,12 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Example Laravel Framework TNTSearch Driver for Laravel Scout",
+    "keywords": [
+        "framework",
+        "laravel",
+        "TNTSearch"
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
