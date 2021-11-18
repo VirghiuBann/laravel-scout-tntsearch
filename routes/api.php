@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('search', [ProductController::class, 'tntSearch'])->name('productSearch');
+
+Route::get('products', [ProductController::class, 'index'])->name('index');
