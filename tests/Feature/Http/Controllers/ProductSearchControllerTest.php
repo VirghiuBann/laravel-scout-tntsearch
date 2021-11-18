@@ -15,7 +15,7 @@ class ProductSearchControllerTest extends TestCase
      */
     public function test_tntsearch()
     {
-        $response = $this->getJson(route("productSearch", ['query' => 'Clifford Pred']));
+        $response = $this->getJson(route("productSearch", ['query' => 'odio']));
 
         $response->assertStatus(200)
             ->dump();

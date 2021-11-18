@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
                 'sub_category_id' => rand(1, 10)
             ])
             ->sequence(fn ($sequence) => ['brand_id' => rand(1, 10)])
+            ->sequence(fn ($sequence) => ['status' => rand(0, 1)])
             ->create();
     }
 }

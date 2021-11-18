@@ -12,10 +12,12 @@ class ProductController extends Controller
         $productConstraint = new Product();
         $productConstraint = $productConstraint->with(['brand:id,name,slug']);
         $q = $request->get('query');
-        dd(Product::search($q));
         $product = Product::search($q)
             ->constrain($productConstraint)
             ->get();
-        dd($product->toArray());
+
+        return response()->json([
+            'products' => $product
+        ]);
     }
 }

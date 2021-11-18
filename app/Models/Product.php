@@ -20,7 +20,8 @@ class Product extends Model
         'model',
         'brand_id',
         'sub_category_id',
-        'category_id'
+        'category_id',
+        'status'
     ];
 
     public function searchableAs()
@@ -28,9 +29,14 @@ class Product extends Model
         return 'product_index';
     }
 
+    public function shouldBeSearchable()
+    {
+        return $this->status == 1;
+    }
+
+
     public function toSearchableArray()
     {
-        // $array = $this->toArray();
         $array = array_merge($this->makeHidden(['created_at', 'updated_at'])
             ->toArray(), [
             'category' => $this->category === null ? '' : $this->category->name,
@@ -39,14 +45,6 @@ class Product extends Model
         ]);
         return $array;
     }
-
-    // protected function makeAllSearchableUsing($query)
-    // {
-    //     return $query
-    //     ->with('subcategory')
-    //     ->with('category')
-    //     ->with('brand');
-    // }
 
     // Relations Ship
 

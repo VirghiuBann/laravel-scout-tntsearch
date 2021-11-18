@@ -18,12 +18,13 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $name = $this->faker->name(),
+            'name' => $name = $this->faker->sentence(),
             'slug' => Str::slug($name),
             'model' => $this->faker->randomNumber(5, true),
             'brand_id' => 1,
             'sub_category_id' => 1,
             'category_id' => 1,
+            'status' => true
         ];
     }
 }
